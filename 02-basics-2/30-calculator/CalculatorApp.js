@@ -12,7 +12,7 @@ export default defineComponent({
      switch (currentAction.value) {
       case "sum":
         return firstOperand.value + secondOperand.value;
-      case "substract":
+      case "subtract":
         return firstOperand.value - secondOperand.value;
       case "multiply":
         return firstOperand.value * secondOperand.value;
@@ -37,7 +37,7 @@ export default defineComponent({
 
       <div class="calculator__operators">
         <label><input type="radio" name="operator" value="sum" v-model="currentAction" />➕</label>
-        <label><input type="radio" name="operator" value="substract" v-model="currentAction" />➖</label>
+        <label><input type="radio" name="operator" value="subtract" v-model="currentAction" />➖</label>
         <label><input type="radio" name="operator" value="multiply" v-model="currentAction" />✖</label>
         <label><input type="radio" name="operator" value="divide" v-model="currentAction" />➗</label>
       </div>
