@@ -5,28 +5,16 @@ export default defineComponent({
 
   setup() {
     // Реактивная переменная для захвата пина
-    const pinRef = ref(null);
-
-    // Реактивные переменные для хранения координат метки
-    let x = ref(0)
-    let y = ref(0)
-    
+    const pinRef = ref(null)
 
     /**
      * Обработчик клика по карте для установки координат метки
      * @param {MouseEvent} event
      */
     function handleClick(event) {
-      x.value = event.offsetX
-      y.value  = event.offsetY
+      pinRef.value.style.left = `${event.offsetX}px`
+      pinRef.value.style.top = `${event.offsetY}px`
     }
-
-    // Следим за X и Y для установки нового положения
-    watch([x, y], ([newX, newY]) => {
-      // Находим метку и изменяем её положение
-      pinRef.value.style.left = `${newX}px`
-      pinRef.value.style.top = `${newY}px`
-    })
 
     return {
       handleClick,
