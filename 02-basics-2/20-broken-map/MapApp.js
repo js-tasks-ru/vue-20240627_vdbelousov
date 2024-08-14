@@ -4,9 +4,6 @@ export default defineComponent({
   name: 'MapApp',
 
   setup() {
-    // Реактивная переменная для захвата пина
-    const pinRef = ref(null)
-
     // Реактивные переменные для хранения координат метки
     const x = ref(0)
     const y = ref(0)
@@ -24,7 +21,6 @@ export default defineComponent({
 
     return {
       handleClick,
-      pinRef,
       pinStyles,
     }
   },
@@ -32,7 +28,7 @@ export default defineComponent({
   template: `
     <div class="map" @click="handleClick">
       <img class="map-image" src="./map.png" alt="Map" draggable="false" />
-      <span ref="pinRef" :style="pinStyles" class="pin">📍</span>
+      <span :style="pinStyles" class="pin">📍</span>
     </div>
   `,
 })
