@@ -1,6 +1,5 @@
 import { defineComponent } from 'vue'
 import { WeatherConditionIcons } from '../weather.service'
-import WeatherTitle from './WeatherTitle'
 import WeatherAlert from './WeatherAlert'
 import WeatherMainInfo from './WeatherMainInfo'
 import WeatherConditions from './WeatherConditions'
@@ -9,7 +8,6 @@ import WeatherDetails from './WeatherDetails'
 export default defineComponent({
   name: 'WeatherLocationWrapper',
   components: {
-    WeatherTitle,
     WeatherAlert,
     WeatherMainInfo,
     WeatherConditions,
